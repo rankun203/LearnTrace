@@ -33,7 +33,12 @@ public class Husband {
     }
 
     @OneToOne
-    @JoinColumn(name = "wifeId")
+    @JoinColumns(
+            {
+                    @JoinColumn(name = "wifeId", referencedColumnName = "id"),
+                    @JoinColumn(name = "wifeName", referencedColumnName = "name")
+            }
+    )
     public Wife getWife() {
         return wife;
     }

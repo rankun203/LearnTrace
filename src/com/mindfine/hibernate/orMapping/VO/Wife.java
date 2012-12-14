@@ -13,17 +13,7 @@ import javax.persistence.*;
 @Entity
 public class Wife {
     private int id;
-    private Husband husband;
-
-    @OneToOne(mappedBy = "wife")
-    public Husband getHusband() {
-        return husband;
-    }
-
-    public void setHusband(Husband husband) {
-        this.husband = husband;
-    }
-
+    private String name;
     public String getName() {
         return name;
     }
@@ -42,5 +32,4 @@ public class Wife {
         this.id = id;
     }
 
-    private String name;
 }

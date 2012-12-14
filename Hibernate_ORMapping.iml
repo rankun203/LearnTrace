@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$USER_HOME$/Documents/GitHub/LearnTrace">
+      <sourceFolder url="file://$USER_HOME$/Documents/GitHub/LearnTrace/test" isTestSource="true" />
+      <sourceFolder url="file://$USER_HOME$/Documents/GitHub/LearnTrace/src" isTestSource="false" />
+      <excludeFolder url="file://$USER_HOME$/Documents/GitHub/LearnTrace/.idea" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sqljdbc4" level="project" />
+    <orderEntry type="library" name="hibernate_jpa" level="project" />
+    <orderEntry type="library" name="log4j-1.2.17" level="project" />
+  </component>
+</module>
+

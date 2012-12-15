@@ -32,13 +32,7 @@ public class Husband {
         this.name = name;
     }
 
-    @OneToOne
-    @JoinColumns(
-            {
-                    @JoinColumn(name = "wifeId", referencedColumnName = "id"),
-                    @JoinColumn(name = "wifeName", referencedColumnName = "name")
-            }
-    )
+    @Embedded
     public Wife getWife() {
         return wife;
     }

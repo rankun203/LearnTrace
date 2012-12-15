@@ -8,7 +8,7 @@
  
  Cheng Du Polytechnic
  
- Link: <a href="http://www.cdvtc.com/">Office Website</a>
+ Link: <a href="http://www.cdvtc.com/">Official Website</a>
 
     软件技术专业
 

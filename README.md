@@ -5,6 +5,8 @@
 
 
  成都职业技术学院
+ Cheng Du Polytechnic
+ Link: <a href="http://www.cdvtc.com/">Office Website</a>
 
     软件技术专业
 

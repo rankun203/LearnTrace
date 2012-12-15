@@ -4,11 +4,11 @@
  * Time: 上午11:19
 
 
- 成都职业技术学院
+ <h1>成都职业技术学院</h1>
  
  Cheng Du Polytechnic
  
- Link: <a href="http://www.cdvtc.com/">Office Website</a>
+ Link: <a href="http://www.cdvtc.com/">Official Website</a>
 
     软件技术专业
 

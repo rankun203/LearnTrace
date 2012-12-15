@@ -26,7 +26,7 @@ public class TestMany2one {
     public void testMany2one(){
         //@param of method 1:create() script print the DDL to the console
         //@param of method 2:create() export export the script to the database
-        new SchemaExport(new Configuration().configure()).create(true, true);
+        new SchemaExport(new Configuration().configure()).create(true, false);
    }
 
     @AfterClass

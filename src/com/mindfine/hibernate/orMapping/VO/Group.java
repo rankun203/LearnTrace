@@ -1,6 +1,8 @@
 package com.mindfine.hibernate.orMapping.VO;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +15,7 @@ import javax.persistence.*;
 public class Group {
     private int id;
     private String name;
+    private Set<User> users = new HashSet<User>();
 
     @Id
     @Column(name="g_id")
@@ -31,5 +34,15 @@ public class Group {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToMany
+    @JoinColumn(name = "groupId")
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

@@ -13,6 +13,7 @@ import javax.persistence.*;
 public class User {
     private int id;
     private String name;
+    private Group group;
 
     @Id
     public int getId() {
@@ -29,5 +30,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @ManyToOne
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }

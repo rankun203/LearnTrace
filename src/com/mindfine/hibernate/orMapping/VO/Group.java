@@ -36,8 +36,8 @@ public class Group {
         this.name = name;
     }
 
-    @OneToMany
-    @JoinColumn(name = "groupId")
+    //双向关联的时候，需要设定OneToMany这端的mappedBy属性，该属性即Many一方是以什么标识符来保存自己的。
+    @OneToMany(mappedBy = "group")
     public Set<User> getUsers() {
         return users;
     }

@@ -14,12 +14,12 @@
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
         <property name="current_session_context_class">thread</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
-        <property name="show_sql">true</property>
+        <!--<property name="show_sql">true</property>-->
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="hibernate.id.new_generator_mappings">true</property>
 
-        <mapping class="com.mindfine.hibernate.orMapping.VO.Husband"/>
-        <mapping class="com.mindfine.hibernate.orMapping.VO.Wife"/>
+        <mapping class="com.mindfine.hibernate.orMapping.VO.Group"/>
+        <mapping class="com.mindfine.hibernate.orMapping.VO.User"/>
     </session-factory>
 </hibernate-configuration>

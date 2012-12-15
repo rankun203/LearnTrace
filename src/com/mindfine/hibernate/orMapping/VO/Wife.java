@@ -9,7 +9,6 @@ package com.mindfine.hibernate.orMapping.VO;
 public class Wife {
     private int wifeid;
     private String wifename;
-
     public String getWifename() {
         return wifename;
     }

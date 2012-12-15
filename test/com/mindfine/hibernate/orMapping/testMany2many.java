@@ -11,10 +11,10 @@ import org.junit.Test;
 /**
  * Created with IntelliJ IDEA.
  * User: rankun203
- * Date: 12-12-14
- * Time: 上午11:26
+ * Date: 12-12-15
+ * Time: 下午11:37
  */
-public class TestOne2one {
+public class testMany2many {
     private static SessionFactory sf = null;
 
     @BeforeClass
@@ -23,7 +23,7 @@ public class TestOne2one {
     }
 
     @Test
-    public void testOne2one(){
+    public void testMany2many(){
         new SchemaExport(new Configuration().configure()).create(true, true);
     }
 

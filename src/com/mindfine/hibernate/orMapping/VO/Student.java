@@ -1,21 +1,22 @@
 package com.mindfine.hibernate.orMapping.VO;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * Created with IntelliJ IDEA.
  * User: rankun203
- * Date: 12-12-14
- * Time: 上午11:24
+ * Date: 12-12-15
+ * Time: 下午11:31
  */
 @Entity
-public class Husband {
+public class Student {
     private int id;
     private String name;
-    private Wife wife;
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -30,14 +31,5 @@ public class Husband {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Embedded
-    public Wife getWife() {
-        return wife;
-    }
-
-    public void setWife(Wife wife) {
-        this.wife = wife;
     }
 }

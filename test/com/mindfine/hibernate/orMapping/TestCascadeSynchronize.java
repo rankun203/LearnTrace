@@ -5,8 +5,6 @@ import com.mindfine.hibernate.orMapping.VO.Student;
 import com.mindfine.hibernate.orMapping.VO.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -32,12 +30,10 @@ public class TestCascadeSynchronize {
         Student student = new Student();
         student.setName("s1");
 
-        Set<Student> studentSet = new HashSet<Student>();
-        studentSet.add(student);
-
         Teacher teacher = new Teacher();
         teacher.setName("t1");
-        teacher.setStudents(studentSet);
+
+        student.getTeachers().add(teacher);
 
         Session session = sf.getCurrentSession();
         session.beginTransaction();

@@ -34,7 +34,7 @@ public class Teacher {
         this.id = id;
     }
 
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany()
     @JoinTable(
             name = "t_s",
             joinColumns = {@JoinColumn(name = "teacher_Id")},

@@ -7,23 +7,16 @@ import java.util.Set;
 /**
  * Created with IntelliJ IDEA.
  * User: rankun203
- * Date: 12-12-15
- * Time: 下午11:31
+ * Date: 12-12-18
+ * Time: 下午12:55
  */
+
 @Entity
-public class Student {
+@Table(name = "t_group")
+public class Group {
     private int id;
     private String name;
-    private Set<Teacher> teachers = new HashSet<Teacher>();
-
-    @ManyToMany(mappedBy = "students", cascade = {CascadeType.ALL})
-    public Set<Teacher> getTeachers() {
-        return teachers;
-    }
-
-    public void setTeachers(Set<Teacher> teachers) {
-        this.teachers = teachers;
-    }
+    private Set<User> userSet = new HashSet<User>();
 
     @Id
     @GeneratedValue
@@ -41,5 +34,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToMany(mappedBy = "group")
+    public Set<User> getUserSet() {
+        return userSet;
+    }
+
+    public void setUserSet(Set<User> userSet) {
+        this.userSet = userSet;
     }
 }

@@ -33,7 +33,7 @@ public class User {
         this.name = name;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     public Group getGroup() {
         return group;
     }

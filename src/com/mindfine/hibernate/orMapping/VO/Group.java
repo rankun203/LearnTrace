@@ -36,7 +36,7 @@ public class Group {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "group", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public Set<User> getUserSet() {
         return userSet;
     }

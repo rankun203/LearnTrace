@@ -4,6 +4,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -18,7 +19,7 @@ public class Exercise_Student_Course_Grade extends SuperTest{
      * “创建整个表结构，不产生任何数据。”
      */
     @Test
-    public void test(){
+    public void testInit(){
 
         new SchemaExport(new Configuration().configure()).create(true, true);
 
@@ -210,24 +211,73 @@ public class Exercise_Student_Course_Grade extends SuperTest{
      * “输出某个学生所有课程的分数。以及平均分，总分。
      */
     @Test
-    public void getStudentGrade(){
+    public void testGetStudentGrade(){
+        session.beginTransaction();
+        Exercise_Student student = (Exercise_Student)session.get(Exercise_Student.class, 7);
+        Set<Exercise_Grade> studentGrade = student.getGradeSet();
+        double totalGrade = 0;
+        int courseCount = 0;
+        for (Exercise_Grade grade : studentGrade){
+            System.out.format("课程：%s 得分：%.2f", grade.getId().getcId().getName(), grade.getGrade()).println();
+            courseCount ++;
+            totalGrade += grade.getGrade();
+        }
 
+        System.out.format("平均分：%.2f", totalGrade / courseCount).println();
+        System.out.format("总分：%.2f", totalGrade).println();
+        session.getTransaction().commit();
     }
 
     /**
      * ”输出某一课程的平均分，最高分，最低分。以及得这个分的人的名字。
      */
     @Test
-    public void getCourseGradeStudent(){
-
+    public void testGetCourseGradeStudent(){
+        session.beginTransaction();
+        Exercise_Course course = (Exercise_Course)session.get(Exercise_Course.class, 3);
+        Set<Exercise_Grade> courseGrade = course.getGradeSet();
+        double totalGrade = 0;
+        Exercise_Grade highest = null;
+        Exercise_Grade lowest = null;
+        int i = 0;
+        for(Exercise_Grade gradeSingle : courseGrade){
+            double grade = gradeSingle.getGrade();
+            totalGrade += grade;
+            if(i == 0){
+                highest = gradeSingle;
+                lowest = gradeSingle;
+            }
+            if(grade > highest.getGrade()){
+                highest = gradeSingle;
+            }
+            if(grade < lowest.getGrade()){
+                lowest = gradeSingle;
+            }
+            i ++;
+        }
+        System.out.format("课程：%s ", course.getName()).println();
+        System.out.format("平均分：%.2f", totalGrade / i).println();
+        if (highest != null) {
+            System.out.format("最高分：%.2f，名字：%s", highest.getGrade(), highest.getId().getsId().getName()).println();
+        }
+        if (lowest != null) {
+            System.out.format("最低分：%.2f，名字：%s", lowest.getGrade(), lowest.getId().getsId().getName()).println();
+        }
+        session.getTransaction().commit();
     }
 
     /**
      * “输出所有的分数，以及获得分数的人的名字和他所选的课程。
      */
     @Test
-    public void getGradeStudentCourse(){
-
+    public void testGetGradeStudentCourse(){
+        session.beginTransaction();
+        Iterator gradeIter = session.createQuery("from Exercise_Grade ").iterate();
+        while(gradeIter.hasNext()){
+            Exercise_Grade grade = (Exercise_Grade)gradeIter.next();
+            System.out.format("姓名：%s 课程：%s 分数：%.2f", grade.getId().getsId().getName(), grade.getId().getcId().getName(), grade.getGrade()).println();
+        }
+        session.getTransaction().commit();
     }
 
 }

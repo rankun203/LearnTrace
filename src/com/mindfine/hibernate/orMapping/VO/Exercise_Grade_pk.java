@@ -1,6 +1,7 @@
 package com.mindfine.hibernate.orMapping.VO;
 
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
@@ -16,6 +17,7 @@ public class Exercise_Grade_pk implements Serializable {
     private Exercise_Course cId;
 
     @ManyToOne
+    @JoinColumn(name = "sid")
     public Exercise_Student getsId() {
         return sId;
     }
@@ -25,6 +27,7 @@ public class Exercise_Grade_pk implements Serializable {
     }
 
     @ManyToOne
+    @JoinColumn(name = "cid")
     public Exercise_Course getcId() {
         return cId;
     }
@@ -35,10 +38,12 @@ public class Exercise_Grade_pk implements Serializable {
 
     @Override
     public boolean equals(Object pk2){
-        Exercise_Grade_pk gpk2 = (Exercise_Grade_pk) pk2;
-        if (this.sId.getId() == gpk2.sId.getId()){
-            if(this.cId.getId() == gpk2.sId.getId()){
-                return true;
+        if(pk2 instanceof Exercise_Grade_pk){
+            Exercise_Grade_pk gpk2 = (Exercise_Grade_pk) pk2;
+            if (this.sId.getId() == gpk2.sId.getId()){
+                if(this.cId.getId() == gpk2.sId.getId()){
+                    return true;
+                }
             }
         }
         return false;

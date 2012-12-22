@@ -14,6 +14,7 @@ import java.util.Set;
 @Table(name = "Tree")
 public class Exercise_2_Tree {
     private int id;
+    private int level;//冗余字段，专门用来记录当前对象在整个树中的级。
     private Exercise_2_Tree pTree;
     private Set<Exercise_2_Tree> cTreeSet;
     private String body;
@@ -33,6 +34,13 @@ public class Exercise_2_Tree {
         this.id = id;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     @ManyToOne
     @JoinColumn(name = "pId")
@@ -60,4 +68,5 @@ public class Exercise_2_Tree {
     public void setBody(String body) {
         this.body = body;
     }
+
 }

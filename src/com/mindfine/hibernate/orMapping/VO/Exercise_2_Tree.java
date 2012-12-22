@@ -43,7 +43,7 @@ public class Exercise_2_Tree {
         this.pTree = pTree;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pTree")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pTree", fetch = FetchType.EAGER)
     public Set<Exercise_2_Tree> getcTreeSet() {
         return cTreeSet;
     }

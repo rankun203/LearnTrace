@@ -51,12 +51,8 @@ public class Exercise_Student_Course_Grade extends SuperTest{
 
         Exercise_Student student1 = new Exercise_Student();
         Exercise_Student student2 = new Exercise_Student();
-        Exercise_Student student3 = new Exercise_Student();
-        Exercise_Student student4 = new Exercise_Student();
         student1.setName("张三");
         student2.setName("李四");
-        student3.setName("王五");
-        student4.setName("杨二");
 
         session = sf.getCurrentSession();
         session.beginTransaction();
@@ -66,23 +62,15 @@ public class Exercise_Student_Course_Grade extends SuperTest{
 
         student1.getCourseSet().add(tempCourse1);
         student2.getCourseSet().add(tempCourse1);
-        student3.getCourseSet().add(tempCourse1);
-        student4.getCourseSet().add(tempCourse1);
 
         student1.getCourseSet().add(tempCourse2);
         student2.getCourseSet().add(tempCourse2);
-        student3.getCourseSet().add(tempCourse2);
-        student4.getCourseSet().add(tempCourse2);
 
         student1.getCourseSet().add(tempCourse3);
         student2.getCourseSet().add(tempCourse3);
-        student3.getCourseSet().add(tempCourse3);
-        student4.getCourseSet().add(tempCourse3);
 
         session.save(student1);
         session.save(student2);
-        session.save(student3);
-        session.save(student4);
 
         session.save(tempCourse1);
         session.save(tempCourse2);
@@ -197,12 +185,12 @@ public class Exercise_Student_Course_Grade extends SuperTest{
         s2g2.setGrade(35);
         s2g3.setGrade(27);
 
-        session.save(s1g1);
-        session.save(s1g2);
-        session.save(s1g3);
-        session.save(s2g1);
-        session.save(s2g2);
-        session.save(s2g3);
+        session.update(s1g1);
+        session.update(s1g2);
+        session.update(s1g3);
+        session.update(s2g1);
+        session.update(s2g2);
+        session.update(s2g3);
 
         session.getTransaction().commit();
     }

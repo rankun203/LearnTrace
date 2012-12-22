@@ -1,9 +1,6 @@
 package com.mindfine.hibernate.orMapping.VO;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,6 +22,7 @@ public class Exercise_Grade {
         this.id = id;
     }
 
+    @Column(nullable = true)
     public double getGrade() {
         return grade;
     }

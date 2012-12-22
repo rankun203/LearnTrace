@@ -37,9 +37,9 @@ public class Exercise_Course {
 
     @ManyToMany()
     @JoinTable(
-            name = "teach",
-            joinColumns = {@JoinColumn(name = "courseId")},
-            inverseJoinColumns = {@JoinColumn(name = "studentId")}
+            name = "Exercise_Grade",
+            joinColumns = {@JoinColumn(name = "cId")},
+            inverseJoinColumns = {@JoinColumn(name = "sId")}
     )
     public Set<Exercise_Student> getStudentSet() {
         return studentSet;

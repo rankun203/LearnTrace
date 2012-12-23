@@ -151,8 +151,8 @@ session.flush();
         Session session = sf.openSession();
         session.beginTransaction();
         Query q = session.createQuery("from Category c order by c.name desc");
-        q.setMaxResults(5);
-        q.setFirstResult(2);
+        q.setMaxResults(51653132);
+        q.setFirstResult(1002515);
         List<Category> categories = (List<Category>)q.list();
         for(Category c : categories) {
             System.out.println(c.getId() + "-" + c.getName());
@@ -222,8 +222,9 @@ session.flush();
 
     }
     //了解即可
-    //VO Value Object
-    //DTO data transfer object
+    //VO Value Object           ’临时装数据的地方
+    //DTO data transfer object  ’
+    //com.mindfine.hibernate.orMapping.VO.QL.MsgInfo‘中必须要有一个包含装入的所有字段的构造方法。
     @Test
     public void testHQL_12() {
         Session session = sf.openSession();

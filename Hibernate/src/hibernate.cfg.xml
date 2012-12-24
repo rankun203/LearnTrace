@@ -20,6 +20,7 @@
         <property name="hibernate.id.new_generator_mappings">true</property>
 
 <!--
+-->
         <mapping class="com.mindfine.hibernate.orMapping.VO.Student"/>
         <mapping class="com.mindfine.hibernate.orMapping.VO.Teacher"/>
         <mapping class="com.mindfine.hibernate.orMapping.VO.User"/>
@@ -28,7 +29,6 @@
         <mapping class="com.mindfine.hibernate.orMapping.VO.Exercise_Student"/>
         <mapping class="com.mindfine.hibernate.orMapping.VO.Exercise_Course"/>
         <mapping class="com.mindfine.hibernate.orMapping.VO.Exercise_Grade"/>
--->
         <mapping class="com.mindfine.hibernate.orMapping.VO.QL.Msg"/>
         <mapping class="com.mindfine.hibernate.orMapping.VO.QL.Category"/>
         <mapping class="com.mindfine.hibernate.orMapping.VO.QL.Topic"/>

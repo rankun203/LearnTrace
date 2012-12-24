@@ -1,0 +1,3 @@
+<beans>
+    <bean id="u" class="com.mindfine.Spring.simulation.DAO.impl.UserDAOImpl"/>
+</beans>

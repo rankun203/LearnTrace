@@ -1,4 +1,4 @@
-package com.mindfine.Spring.simulation.model;
+package com.mindfine.Spring.FirstSpring.model;
 
 /**
  * Created with IntelliJ IDEA.

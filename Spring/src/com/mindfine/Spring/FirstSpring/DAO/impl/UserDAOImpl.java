@@ -1,7 +1,7 @@
-package com.mindfine.Spring.simulation.DAO.impl;
+package com.mindfine.Spring.FirstSpring.DAO.impl;
 
-import com.mindfine.Spring.simulation.DAO.UserDAO;
-import com.mindfine.Spring.simulation.model.User;
+import com.mindfine.Spring.FirstSpring.DAO.UserDAO;
+import com.mindfine.Spring.FirstSpring.model.User;
 
 /**
  * Created with IntelliJ IDEA.

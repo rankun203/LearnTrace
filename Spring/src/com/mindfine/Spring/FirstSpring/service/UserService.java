@@ -1,6 +1,6 @@
 package com.mindfine.Spring.FirstSpring.service;
 
-import com.mindfine.Spring.FirstSpring.DAO.UserDAO;
+import com.mindfine.Spring.FirstSpring.DAO.IUserDAO;
 import com.mindfine.Spring.FirstSpring.model.User;
 
 /**
@@ -10,16 +10,16 @@ import com.mindfine.Spring.FirstSpring.model.User;
  * Time: 上午11:46
  */
 public class UserService {
-    UserDAO dao;
+    IUserDAO dao;
     public boolean addUser(User user) throws Exception {
         return this.dao.addUser(user);
     }
 
-    public UserDAO getDao() {
+    public IUserDAO getDao() {
         return dao;
     }
 
-    public void setDao(UserDAO dao) {
+    public void setDao(IUserDAO dao) {
         this.dao = dao;
     }
 }

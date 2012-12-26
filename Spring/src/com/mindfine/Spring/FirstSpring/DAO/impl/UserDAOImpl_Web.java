@@ -1,18 +1,18 @@
 package com.mindfine.Spring.FirstSpring.DAO.impl;
 
-import com.mindfine.Spring.FirstSpring.DAO.UserDAO;
+import com.mindfine.Spring.FirstSpring.DAO.IUserDAO;
 import com.mindfine.Spring.FirstSpring.model.User;
 
 /**
  * Created with IntelliJ IDEA.
  * User: rankun203
- * Date: 12-12-24
- * Time: 上午11:00
+ * Date: 12-12-26
+ * Time: 上午10:27
  */
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl_Web implements IUserDAO {
     @Override
     public boolean addUser(User user) throws Exception {
-        System.out.println("UserDAOImpl report: " + " User " + user.getName() + " Add Success.");
+        System.out.println("Publish success.");
         return true;
     }
 }

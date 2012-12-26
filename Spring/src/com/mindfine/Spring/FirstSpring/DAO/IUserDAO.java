@@ -8,6 +8,6 @@ import com.mindfine.Spring.FirstSpring.model.User;
  * Date: 12-12-24
  * Time: 上午10:59
  */
-public interface UserDAO {
+public interface IUserDAO {
     public boolean addUser(User user) throws Exception;
 }

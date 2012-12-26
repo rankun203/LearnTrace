@@ -5,8 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="u" class="com.mindfine.Spring.FirstSpring.DAO.impl.UserDAOImpl"/>
+    <import resource="user-implements.xml"/>
+
     <bean id="userService" class="com.mindfine.Spring.FirstSpring.service.UserService">
-        <property name="dao" ref="u"/>
+        <property name="dao" ref="user_db"/>
     </bean>
+
+    <bean id="db" class="com.mindfine.Spring.FirstSpring.DB.DB">
+        <property name="url" value="jdbc:mysql://localhost:3306/FirstSpring"/>
+        <property name="user" value="root"/>
+        <property name="pass" value="password"/>
+    </bean>
+
 </beans>

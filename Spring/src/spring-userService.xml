@@ -5,6 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="userService" class="com.mindfine.Spring.FirstSpring.service.UserService">
+        <property name="dao" ref="user_db"/>
+    </bean>
+
     <bean id="user_db" class="com.mindfine.Spring.FirstSpring.DAO.impl.UserDAOImpl_DB"/>
     <bean id="user_web" class="com.mindfine.Spring.FirstSpring.DAO.impl.UserDAOImpl_Web"/>
 

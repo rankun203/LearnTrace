@@ -16,7 +16,7 @@ import com.mindfine.Spring.FirstSpring.DB.DB;
 public class UserServiceTest {
     @Test
     public void testUserService() throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-common.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-conf.xml");
         UserService userService = (UserService)context.getBean("userService");
         User u = new User();
         u.setId(2);
@@ -26,7 +26,7 @@ public class UserServiceTest {
 
     @Test
     public void testInjectValueToProperty(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-common.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-conf.xml");
         DB db = (DB)context.getBean("db");
         db.getConnection();
     }

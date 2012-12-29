@@ -1,11 +1,10 @@
 package com.mindfine.Spring.FirstSpring.service;
 
+import com.mindfine.Spring.FirstSpring.DB.DB;
 import com.mindfine.Spring.FirstSpring.model.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.mindfine.Spring.FirstSpring.DB.DB;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +17,8 @@ public class UserServiceTest {
     public void testUserService() throws Exception {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-conf.xml");
         UserService userService = (UserService)context.getBean("userService");
+        UserService userService1 = (UserService) context.getBean("userService");
+        System.out.println("userService == userService1: " + (userService == userService1));
         User u = new User();
         u.setId(2);
         u.setName("张三丰");

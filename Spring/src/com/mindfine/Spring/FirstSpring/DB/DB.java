@@ -9,6 +9,7 @@ import java.sql.Connection;
  * Time: 上午10:43
  */
 public class DB {
+    private String driverClass;
     private String url;
     private String user;
     private String pass;
@@ -27,6 +28,7 @@ public class DB {
     }
 
     public Connection getConnection() {
+        System.out.println("Load Driver Class: " + driverClass);
         System.out.println("Connect to Database Server.database: " + url);
         System.out.println("user: " + user);
         System.out.println("password: " + pass);
@@ -35,5 +37,9 @@ public class DB {
 
     public boolean close() {
         return false;
+    }
+
+    public void setDriverClass(String driverClass) {
+        this.driverClass = driverClass;
     }
 }

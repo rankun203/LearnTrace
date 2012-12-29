@@ -21,11 +21,13 @@ public class MyInvocationHandler implements InvocationHandler {
 
         System.out.println("Method Invoke start ……");
 
-        long startt = System.currentTimeMillis();
+System.out.println("proxy.getClass().getName(): " + proxy.getClass().getName());
+
+        long startTime = System.currentTimeMillis();
 
         Object obj = method.invoke(target, args);
 
-        System.out.println("Method Invoke spent " + (System.currentTimeMillis() - startt) + " ms.");
+        System.out.println("Method Invoke spent " + (System.currentTimeMillis() - startTime) + " ms.\n");
 
         return obj;
     }

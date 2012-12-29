@@ -24,8 +24,8 @@ public class ClassPathXmlConfLoader {
         List<Element> interfaces = root.getChildren();
         for(Element secNode : interfaces) {
             if(secNode.getName().equals("myImpl")){
-                String eleName = secNode.getAttributeValue("name");
-                String eleClass = secNode.getAttributeValue("class");
+                String eleName = secNode.getAttributeValue("interface");
+                String eleClass = secNode.getAttributeValue("impl");
                 Object obj = Class.forName(eleClass).newInstance();
                 beanMap.put(eleName, obj);
             }

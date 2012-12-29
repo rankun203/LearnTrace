@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <daos>
-    <myImpl name="IUserDAO" class="com.mindfine.Spring.AopSimulator.dao.impl.IUserDAOImpl"/>
+    <myImpl interface="IUserDAO" impl="com.mindfine.Spring.AopSimulator.dao.impl.IUserDAOImpl"/>
+    <myImpl interface="IGroupDAO" impl="com.mindfine.Spring.AopSimulator.dao.impl.IGroupDAOImpl"/>
 </daos>

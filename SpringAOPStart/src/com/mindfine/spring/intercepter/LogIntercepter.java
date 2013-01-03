@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LogIntercepter {
 
-    @Before("execution(public * *(..))")
+    @Before("execution(public * com.mindfine.spring.service.StudentService.addStudent(com.mindfine.spring.model.Student))")
     public void logging(){
         System.out.println("日志来了~~~~~~~~~~");
     }

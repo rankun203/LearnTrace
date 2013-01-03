@@ -11,9 +11,9 @@ import static java.lang.System.currentTimeMillis;
  * Date: 12-12-28
  * Time: 上午10:16
  */
-public class MyInvocationHandler implements InvocationHandler {
+public class TimeSpentHandler implements InvocationHandler {
     private Object target;
-    public MyInvocationHandler(Object target){
+    public TimeSpentHandler(Object target){
         this.target = target;
     }
     @Override
@@ -21,7 +21,7 @@ public class MyInvocationHandler implements InvocationHandler {
 
         System.out.println("Method Invoke start ……");
 
-System.out.println("proxy.getClass().getName(): " + proxy.getClass().getName());
+System.out.println("handler->proxy.getClass().getName(): " + proxy.getClass().getName());
 
         long startTime = System.currentTimeMillis();
 

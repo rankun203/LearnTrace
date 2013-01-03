@@ -32,8 +32,8 @@ public class MyInvocationHandlerTest {
        IGroupDAO groupDAOImplTarget = (IGroupDAO) loader.getBean("IGroupDAO");
 
        //把要被代理的类交给我们自定义的InvocationHandler，Handler有调用被代理类的方法的功能
-       InvocationHandler myHandler = new MyInvocationHandler(userDAOImplTarget);
-       InvocationHandler groupHandler = new MyInvocationHandler(groupDAOImplTarget);
+       InvocationHandler myHandler = new TimeSpentHandler(userDAOImplTarget);
+       InvocationHandler groupHandler = new TimeSpentHandler(groupDAOImplTarget);
 
        IUserDAO proxy = (IUserDAO)Proxy.newProxyInstance(
                userDAOImplTarget.getClass().getClassLoader(),

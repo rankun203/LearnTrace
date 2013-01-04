@@ -9,6 +9,14 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="com.mindfine"/>
+<!--
     <aop:aspectj-autoproxy/>
+-->
+    <aop:config>
+        <aop:pointcut id="logPoint" expression="execution(public * com.mindfine.spring.dao..*.*(..))"/>
+        <aop:aspect id="logInterceptor" ref="logIntercepter">
+            <aop:around method="around" pointcut-ref="logPoint"/>
+        </aop:aspect>
+    </aop:config>
 
 </beans>
